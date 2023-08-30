@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(203, 193, 44);
+        }
+        /*****der Hauptkontainer hat mit display: grid und 
+              grid-tamplate-columns 4 Spalten bekommen*****/
+        main{
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            border: solid black 1px;
+            height: 500px;
+            margin: 30px;
+            background-color: blue;
+            text-align: center;
+            border: dotted 5px rgb(247, 247, 247);
+        }
+        main div{
+            border: solid black 1px;
+            margin: 30px;
+            background-color: aqua;
+        }
+        /**** hier sagen wir dem element mit der klasse pos3 dass es in der 4. spalte starten soll ****/
+        main .pos3{
+            grid-column-start: 4;
+            border: dashed 3px red;
+
+        }
+        main .span1{
+        /**** hier sagen wir dem element mit der klasse span1 dass es sich über 2 Spalten strecken soll ****/
+            grid-column-end: span 2;
+            border: dashed 3px red;
+        }
+        main .span2{
+            /**** hier sagen wir dem element mit der klasse span2 dass es sich über 2 zeilen strecken soll 
+                   ausserdem haben wir noch ein display: flex angelegt,
+                   um die im span2 angelegten divs flexibel zu machen 
+                   und mit flex: warp sagen wir den divs dass sie
+                   bei zu wenig Platz in die nachste zeile rutschen sollen 
+                   mit justify-content: flex-end sagen wir den divs dass sie sich rechtsbündig 
+                   anordnen sollen ****/
+            
+            grid-row-end: span 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            border: dashed 3px red;
+        }
+        main .span2 div{
+            width: 50px;
+            background-color: aquamarine;
+        }
+        /*****der footer hat mit display: grid und 
+              grid-tamplate-columns 2 Spalten bekommen*****/
+        footer{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            border: solid black 1px;
+            height: 500px;
+            margin: 30px;
+            background-color: green;
+            text-align: center;
+            border: dotted 5px rgb(247, 247, 247);
+        }
+        footer .fdiv1, .fdiv2{
+            border: solid black 1px;
+            margin: 20px;
+        }
+        /*****die klasse fdiv1 bekommt mit display: grid und 
+              grid-tamplate-columns 3 Spalten zugewiesen *****/
+        footer .fdiv1{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;   
+            background-color: greenyellow;
+            border: dotted 5px rgb(247, 247, 247);
+        }
+        footer .fdiv1 *{
+            border: solid black 1px;
+            margin: 20px;
+        }
+        footer .fdiv1 div{
+            background-color: yellow;
+        }
+        footer .f2A{
+         /**** hier sagen wir dem element mit der klasse f2A dass es sich über 2 Spalten strecken soll ****/
+            grid-column-end: span 2;
+            border: dashed 3px red;
+        }
+        footer .f3A{
+            /**** hier sagen wir dem element mit der klasse f3A dass es sich über 2 Spalten strecken soll ****/
+            grid-column-end: span 2;
+            border: dashed 3px red;
+        }
+        footer .fdiv2 *{
+            border: solid black 1px;
+            margin: 20px;
+        }
+        footer .fdiv2{
+            /**** hier geben wir der klasse fdiv2 ein display: flex,
+                  um die darinliegenden divs flexibel zu machen
+                  und mit flex: warp sagen wir den divs dass sie
+                  bei zu wenig Platz in die nachste zeile rutschen sollen
+                  ausserdem bekommen die divs mit justify-content: space-arround 
+                  rundeherum freiraum ****/
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: lime;
+            border: dotted 5px rgb(247, 247, 247);
+        }
+        footer .fdiv2 div{
+            width: 120px;
+            background-color: rgb(96, 248, 96);
+        }
+      
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div class="pos3">A</div>
+        <div class="span1">B</div>
+        <div class="mC">C</div>
+        <div class="span2">D
+            <div class="flexA">FA</div>
+            <div class="flexB">FB</div>
+            <div class="flexC">FC</div>
+        </div>
+        <div class="mE">E</div>
+        <div class="mF">F</div>
+        <div class="mG">G</div>
+    </main>
+    <footer>
+        <div class="fdiv1">
+            <div class="f1A">1A</div>
+            <div class="f2A">2A</div>
+            <div class="f3A">3A</div>
+            <div class="f4A">4A</div>
+        </div>
+        <div class="fdiv2">
+            <div class="f1B">1B</div>
+            <div class="f2B">2B</div>
+            <div class="f3B">3B</div>
+            <div class="f4B">4B</div>
+            <div class="f5B">5B</div>
+        </div>
+    </footer>
+</body>
+</html>
